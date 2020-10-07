@@ -1,0 +1,67 @@
+﻿@using FAPS.Core.Helper
+@model FAPS.Core.RestApp.Models.RestApiViewModel
+@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div style="background: #e4e4e4;float: left;width:100%;min-height: calc(100vh - 119px);">
+        <div class="container">
+            <div style="width: 60%;margin:20px auto 0;min-height: 120px;background: #fff;box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);">
+                <div class="px-5 py-4 position-relative currentElement" style="list-style: none; border-radius: 4px; cursor: move;">
+                    @if (Model != null)
+                    {
+                        var isPaymentModel = (Model.RequestType == ERequestType.SALE.ToString() ||
+                                        Model.RequestType == ERequestType.AUTHORIZE.ToString());
+                        if (isPaymentModel)
+                        {
+                            <div class="form-group-m-0">
+                                <label contenteditable="true">Payment Type</label>
+                                @Html.DropDownListFor(m => m.PaymentType, new SelectList(
+                                    new List<Object>{
+                                       new { value = "CreditCard" , text = "Credit Card"  },
+                                       new { value = "Token" , text = "Token" },
+                                       new { value = "MagData" , text = "Mag Data"},
+                                       new { value = "CryptoGram" , text = "Crypto Gram"},
+                                       new { value = "Vault" , text = "Vault"}
+                                    },
+                                    "value",
+                                    "text",
+                                    Model.PaymentType
+                                 ), new { @class = "form-control", @autofocus = "true" })
+                            </div>
+                        }
+                    }
+                    <div class="form-group m-0">
+                        <label contenteditable="true">Rest API Request</label>
+                        @Html.TextAreaFor(m => m.TransationRequest, new { @class = "form-control", style = "height: 400px;" })
+                    </div>
+                    <br />
+                    <div class="text-right">
+                        <input type="submit" class="btn btn-warning btn-sm ml-auto" value="Send" />
+                    </div>
+                </div>
+            </div>
+            <div style="width: 60%;margin:20px auto 0;min-height: 120px;background: #fff;box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);">
+                <div class="px-5 py-4 position-relative currentElement" style="list-style: none; border-radius: 4px; cursor: move;">
+                    <div class="form-group m-0">
+                        <label contenteditable="true">Rest API Response</label>
+                        @*@Html.TextAreaFor(m => m.TransationResponse, new { @class = "form-control", style = "height: 250px;" })*@
+                        <div class="form-control" style="height:250px;word-wrap:break-word;overflow-x: auto;">
+                            @Html.DisplayFor(m => m.TransationResponse)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Html.HiddenFor(m => m.RequestType)
+
+    @section scripts {
+        <script src="~/app/home.js"></script>
+    }
+}
+

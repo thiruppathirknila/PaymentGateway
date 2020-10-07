@@ -1,0 +1,66 @@
+﻿@using FAPS.Core.Helper
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>REST API PAYMENT GATEWAY</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/jquery-ui.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/all.css" rel="stylesheet" />
+</head>
+<body>
+
+    <nav class="navbar navbar-light navbar-expand-lg bg-light position-relative">
+        @*<a class="navbar-brand" href="#"><img style="width: 110px" src="img/logo.png"></a>*@
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    <div class="align-items-center bg-lightgreen m-0 p-2 px-3 row shadow-sm position-relative" style="z-index: 99">
+        @*<div class="latEdit mr-auto">Last edited at 2:28 PM</div>*@
+        <div class="font-weight-bold formName h5 m-auto">REST API PAYMENT GATEWAY</div>
+    </div>
+    <div class="leftBarToggle">
+        <a href="javascript:;"><i class="fab fa-elementor"></i> REST API LIST</a>
+    </div>
+
+    <div class="leftBar shadow">
+        <div class="barHead">
+            <span>API List</span>
+            <span class="leftBarClose float-right"><i class="fas fa-times"></i></span>
+        </div>
+        <div style="overflow-y:auto;height: calc(100vh - 190px);">
+            <div class="bg-dark formElementHead h5 m-0 p-2 text-white">API</div>
+            <div class="bg-secondary formElementHeadSmall h6 m-0 p-1 text-white">Credit Card</div>
+            <ul>
+                <li><a href="@Url.Action("Home","RestApi", new { requestType = ERequestType.AUTHORIZE })">Auth</a></li>
+                <li><a href="@Url.Action("Home","RestApi", new { requestType = ERequestType.REFUND })">Refund</a></li>
+                <li><a href="@Url.Action("Home","RestApi", new { requestType = ERequestType.SETTLE })">Settle</a></li>
+                <li><a href="@Url.Action("Home","RestApi", new { requestType = ERequestType.SALE })">Sale</a></li>
+                <li><a href="@Url.Action("Home","RestApi", new { requestType = ERequestType.TIPADJUST })">TipAdjust</a></li>
+                <li><a href="@Url.Action("Home","RestApi", new { requestType = ERequestType.VOID })">Void</a></li>
+            </ul>
+            <div class="bg-secondary formElementHeadSmall h6 m-0 p-1 text-white">ACH</div>
+            <ul>
+                <li><a href="@Url.Action("Home","RestApi", new { requestType = ERequestType.CREDIT })">Credit</a></li>
+                <li><a href="@Url.Action("Home","RestApi", new { requestType = ERequestType.DEBIT })">Debit</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="formContainer">
+        @RenderBody()
+    </div>
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="~/js/jquery-3.5.1.js"></script>
+    <script src="~/js/popper.js"></script>
+    <script src="~/js/bootstrap.js"></script>
+    <script src="~/js/jquery-ui.js"></script>
+    <script src="~/js/custom.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

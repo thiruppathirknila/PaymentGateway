@@ -1,0 +1,44 @@
+{
+  "CreditCardInfo": {
+    "CreditCard": {
+      "CcNumber": "4313073048520440",
+      "ExpMonthYear": "0417",
+      "CVV2": "555"
+    },
+    "BillingAddress": {
+      "FirstName": "Ram",
+      "LastName": "Kumar",
+      "Address": "",
+      "Address2": "",
+      "City": "",
+      "State": "",
+      "PostalCode": "",
+      "Country": "",
+      "Telephone": "",
+      "EmailAddress": ""
+    }
+  },
+
+  "TokenInfo": {
+    "Token": "0376951301870440",
+    "ExpMonthYear": "0423",
+    "CVV2": "554"
+  },
+
+  "VaultInfo": {
+    "VaultKey": "0376951301870440",
+    "VaultId": "",
+    "CategoryText": "",
+    "CVV2": "553"
+  },
+
+  "CryptoGramInfo": {
+    "CryptoGram": "0376951301870440"
+  },
+
+  "MagDataInfo": {
+    "MagData": "",
+    "Ksn": "",
+    "EncryptionBlockType": ""
+  }
+}

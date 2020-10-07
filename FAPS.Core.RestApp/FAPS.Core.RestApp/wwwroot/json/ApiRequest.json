@@ -1,0 +1,241 @@
+{
+  //AuthSaleAch request for Creadit Card information
+  "AuthSale": {
+    "MerchantInfo": {
+      "TransactionType": "Sale",
+      "Merchantkey": "CAB42BFB-67CD-4589-B009-FA714453B1FF",
+      "IpAddress": "127.0.0.1",
+      "Processorid": "85024"
+    },
+    "AutoGenerateorderid": "true",
+    "OrderidisUnique": "true",
+    "TransactionAmount": "100.00",
+    "_viCardNumber": "4263982540269290",
+    "_McCardNumber": "5506924231097519",
+    "_dsCardNumber": "6011111111111117",
+    "_aeCardNumer": "374099666643101",
+    "CreditCardToken": "6418831972383492",
+    "_MagData": "%B5413330089604111^UAT USA/TEST CARD 06 ^2212201012340917200000000000000?;5413330089604111=22122010123409172000?",
+    "CardNumber": "5480420024331843",
+    "_CreditCardCryptogram": "A3450000011S4PGAS9AMP3XZ",
+    "CardExpMonth": "02",
+    "CardExpyear": "23",
+    "OwnerName": "Patrick Petrino",
+    "OwnerStreet": "172 Dev St",
+    "OwnerStreet2": "ABCD",
+    "Ownercity": "Camden",
+    "Ownerstate": "NJ",
+    "Ownerzip": "08102",
+    "OwnerCountry": "US",
+    "CloseDate": "10/10/2020",
+    "RecurringStartDate": "09/10/2020",
+    "RecurringEndDate": "09/10/2020",
+    "Level3Data": [
+      {
+        "Number": "",
+        "Quantity": "10",
+        "Price": "",
+        "Description": "",
+        "UnitOfMeasure": "",
+        "ItemDiscountAmount": "",
+        "ItemDiscountRate": ""
+      },
+      {
+        "Number": "",
+        "Quantity": "10",
+        "Price": "",
+        "Description": "",
+        "UnitOfMeasure": "",
+        "ItemDiscountAmount": "",
+        "ItemDiscountRate": ""
+      },
+      {
+        "Number": "",
+        "Quantity": "10",
+        "Price": "",
+        "Description": "",
+        "UnitOfMeasure": "",
+        "ItemDiscountAmount": "",
+        "ItemDiscountRate": ""
+      }
+    ]
+  },
+
+  //ACH
+  //Ach request for Creadit and Debit Card information
+  "ACH": {
+    "IpAddress": "127.0.0.1",
+    "VersionNum": 123,
+    "ApplicationId": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+    "RequestType": "",
+    "TransactionSource": "REST GATEWAY",
+    "AccessToken": "9245fe4a-d402-451c-b9ed-9c1a04247482",
+    "RequestId": "0f8fad5b-d9cb-469f-a165-70867728950e",
+    "Amount": {
+      "Amount": "10.00",
+      "Currency": 1
+    },
+    "PaymentMethod": {
+      "AchInfo": {
+        "RoutingNumber": "122105155",
+        "AccountNumber": "12345678901234",
+        "AccountType": "Saving",
+        "AchCategory": "",
+        "AchClassCode": ""
+      },
+      "BillingAddress": {
+        "FirstName": "Ram",
+        "LastName": "Kumar",
+        "Address": "",
+        "Address2": "",
+        "City": "",
+        "State": "",
+        "PostalCode": "",
+        "Country": "",
+        "Telephone": "",
+        "EmailAddress": ""
+      }
+    },
+    "ShippingAddress": {
+      "Carrier": "10",
+      "DeliverType": "",
+      "FirstName": "Ram",
+      "LastName": "Kumar",
+      "Address": "",
+      "Address2": "",
+      "City": "",
+      "State": "",
+      "PostalCode": "",
+      "Country": "",
+      "Telephone": "",
+      "EmailAddress": ""
+    },
+    "Level2Data": {
+      "CustomerRefNo": "",
+      "LocalTaxFlag": "",
+      "PurchaseCard": "",
+      "ShippingZip": "",
+      "TaxAmount": ""
+    },
+    "Level3Data": [
+      {
+        "Number": "",
+        "Quantity": "10",
+        "Price": "",
+        "Description": "",
+        "UnitOfMeasure": "",
+        "ItemDiscountAmount": "",
+        "ItemDiscountRate": ""
+      },
+      {
+        "Number": "",
+        "Quantity": "10",
+        "Price": "",
+        "Description": "",
+        "UnitOfMeasure": "",
+        "ItemDiscountAmount": "",
+        "ItemDiscountRate": ""
+      },
+      {
+        "Number": "",
+        "Quantity": "10",
+        "Price": "",
+        "Description": "",
+        "UnitOfMeasure": "",
+        "ItemDiscountAmount": "",
+        "ItemDiscountRate": ""
+      }
+    ],
+    "DtCloseDate": "",
+    "RecurringModel": {
+      "RecurringType": 100,
+      "RecurringStartDate": "",
+      "RecurringEndDate": ""
+    },
+    "OrderModel": {
+      "AutoGenerateOrderId": "",
+      "OrderId": "",
+      "OrderIdIsUnique": ""
+    },
+    "CustomDataModel": [
+      {
+        "CustomDataModel": "",
+        "CustomDataValue": ""
+      },
+      {
+        "CustomDataModel": "",
+        "CustomDataValue": ""
+      },
+      {
+        "CustomDataModel": "",
+        "CustomDataValue": ""
+      }
+    ]
+  },
+
+  //Void
+  "Void": {
+    "IpAddress": "127.0.0.1",
+    "VersionNum": 123,
+    "ApplicationId": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+    "RequestType": "VOID",
+    "TransactionSource": "REST GATEWAY",
+    "AccessToken": "9245fe4a-d402-451c-b9ed-9c1a04247482",
+    "RequestId": "0f8fad5b-d9cb-469f-a165-70867728950e",
+    "TransactionId": "100"
+  },
+
+  //Refund
+  "Refund": {
+    "IpAddress": "127.0.0.1",
+    "VersionNum": 123,
+    "ApplicationId": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+    "RequestType": "Refund",
+    "TransactionSource": "REST GATEWAY",
+    "AccessToken": "9245fe4a-d402-451c-b9ed-9c1a04247482",
+    "RequestId": "0f8fad5b-d9cb-469f-a165-70867728950e",
+    "TransactionId": "100",
+    "Amount": {
+      "Amount": "10.00",
+      "Currency": 1
+    }
+  },
+
+  //Settle
+  "Settle": {
+    "IpAddress": "127.0.0.1",
+    "VersionNum": 123,
+    "ApplicationId": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+    "RequestType": "Settle",
+    "TransactionSource": "REST GATEWAY",
+    "AccessToken": "9245fe4a-d402-451c-b9ed-9c1a04247482",
+    "RequestId": "0f8fad5b-d9cb-469f-a165-70867728950e",
+    "TransactionId": "100",
+    "Amount": {
+      "Amount": "10.00",
+      "Currency": 1
+    }
+  },
+
+  //TipAdjust
+  "TipAdjust": {
+    "IpAddress": "127.0.0.1",
+    "VersionNum": 123,
+    "ApplicationId": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+    "RequestType": "Tip Adjust",
+    "TransactionSource": "REST GATEWAY",
+    "AccessToken": "9245fe4a-d402-451c-b9ed-9c1a04247482",
+    "RequestId": "0f8fad5b-d9cb-469f-a165-70867728950e",
+    "TransactionId": "100",
+    "Amount": {
+      "Amount": "10.00",
+      "Currency": 1
+    },
+    "TipAmount": {
+      "Amount": "10.00",
+      "Currency": 1
+    }
+  }
+
+
+}

@@ -1,0 +1,190 @@
+body{
+	font-family: 'Inter', sans-serif;
+	color: #242021;
+}
+.bg-green{
+    background: #2ad37c;
+}
+.bg-lightgreen{
+    background: #dff8eb;
+}
+.bg-greenSecondary{
+	    background-color: #70c24f;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #b9b9b9;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #b9b9b9;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #b9b9b9;
+}
+::-moz-selection { /* Code for Firefox */
+  color: #000;
+  background: #2ad37c;
+}
+
+::selection {
+  color: #000;
+  background: #2ad37c;
+}
+.addLogo{
+	width: 690px;
+	margin:20px auto 0;
+	border: 2px dotted #7c7c7d;
+	height: 50px;
+	text-align: center;
+	font-size:20px;
+	line-height: 46px;
+	color: #7c7c7d;
+	cursor: pointer;
+}
+.addLogo:hover{
+    border: 2px dotted #2ad37c;
+    color: #2ad37c;
+}
+.leftBarToggle{
+position: absolute;
+    font-size: 16px;
+    padding: 12px;
+    background: #2ad37c;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    height: 108px;
+    margin: auto;
+    border-radius: 5px;
+    left:0;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+.leftBarToggle.hide{
+	left:-120px;
+}
+.leftBarToggle:hover{
+	box-shadow: 0 0 0 0.2rem rgba(143, 171, 61, 0.5);
+}
+.leftBarToggle a{
+display: flex;
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+.leftBarToggle i{
+	font-size: 30px;
+    margin-bottom: 6px;
+}
+.leftBar{
+	width: 320px;
+    transition: all 0.5s ease-in-out;
+    position: absolute;
+    background: #efefef;
+    height: calc(100% - 144px);
+    top: 130px;
+    left:-320px;
+}
+.leftBar.show{
+left:0px;
+}
+.leftBar .barHead{
+	background: #2ad37c;
+	padding: 10px;
+	font-size: 20px;
+	font-weight: 600;
+	color: #ffffff;
+}
+.leftBarClose{
+	cursor: pointer;
+	opacity: 0.8;
+}
+.leftBarClose:hover{
+opacity: 1;
+}
+.leftBar ul{
+list-style: none;
+padding: 0;
+margin: 0;
+}
+.leftBar ul li{
+    padding: 9px 12px;
+    background-color: #c5c5c5;
+    border-bottom: 1px solid #eaf2e9;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+
+/*Form Css*/
+.formContainer{
+	width: 100%;
+	transition: all 0.5s ease-in-out;
+}
+.ui-draggable-dragging{
+padding: 9px 12px;
+    background-color: #c5c5c5;
+    font-weight: 600;
+    font-size: 18px;
+    width: 303px;
+    list-style: none;
+}
+[contenteditable='true']{
+	outline: none;
+	cursor: text;
+	z-index: 99;
+}
+.helperIcon{
+	top:0;
+	right: 10px;
+}
+.currentElement:after{
+    content: "\f58e";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.28);
+    height: 27px;
+    bottom: 0;
+    margin: auto;
+}
+.ActionBtn{
+    right: -40px;
+    width: 32px;
+    height: 68px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+}
+.ActionBtn a{
+width: 32px;
+height: 32px;
+margin-bottom: 4px; 
+}
+.ActionBtn{
+	visibility: hidden;
+	opacity: 0;
+	right: 10px;
+	width: 32px;
+    height: 68px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    
+}
+.currentElement .ActionBtn{
+	visibility: visible;	
+	right: -40px;
+	opacity: 1;
+}
+.currentElement{
+	box-shadow: 0px 0px 1px 2px #2ad37c;
+}

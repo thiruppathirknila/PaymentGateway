@@ -1,0 +1,9 @@
+{
+  "CreditCardInfoSchema": {
+    "CreditCard": {
+      "CcNumber": "4313073048520440",
+      "ExpMonthYear": "0417",
+      "CVV2": "555"
+    }
+  }
+}
