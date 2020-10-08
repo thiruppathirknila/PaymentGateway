@@ -1,4 +1,5 @@
-﻿using Core.Gateway.Domain.Helpers;
+﻿
+using Core.Gateway.Data.Queries;
 using Core.Gateway.Domain.Interfaces;
 using Core.Gateway.Models;
 using Dapper;
@@ -14,9 +15,11 @@ namespace Core.Gateway.Domain.Services
    public class MessageService : IMessageService
     {
         private readonly IGenericRepository _repository;
-        public MessageService(IGenericRepository repository)
+        private readonly ICommandText _query;
+        public MessageService(IGenericRepository repository, ICommandText query)
         {
             _repository = repository;
+            _query = query;
         }
         public async Task<string> GetErrorMessage(string errorKey)
         {
@@ -25,7 +28,7 @@ namespace Core.Gateway.Domain.Services
                 var dbPara = new DynamicParameters();
                 dbPara.Add("MessageCode", errorKey);
 
-                var result = await Task.FromResult(_repository.Get<ErrorMessage>(Query.GetErrorValue, dbPara, commandType: CommandType.Text));
+                var result = await Task.FromResult(_repository.RunQuery<ErrorMessage>(_query.GetErrorValue, dbPara)).Result;
                 if (result != null)
                 {
                     return result.MessageValue;

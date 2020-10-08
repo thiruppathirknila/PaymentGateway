@@ -13,5 +13,6 @@ namespace Core.Gateway.Data.Queries
         string MerchantConfigAccTypeMoto { get; }
         string MerchantConfigAccTypeRetail { get; }
         string GetOrderIdFoundCount { get; }
+        string GetErrorValue { get; }
     }
 }

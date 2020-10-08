@@ -4,12 +4,11 @@ using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using Core.Gateway.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Core.Gateway.Domain.Interfaces;
 using Core.Gateway.Api.Helper;
 
-namespace Core.Gateway.Domain.Services
+namespace Core.Gateway.Services
 {
     public class TransactionService : IDisposable
     {
@@ -119,11 +118,11 @@ namespace Core.Gateway.Domain.Services
                 }
                 var ValidateHelper = new ValidateHelper();
 
-                var orderId= new ValidateHelper().ValidateOrderIdAndGenerateNewOrderIdIfNeededAsync(request, merchantInfoResult, errorModel, _processHelper);
+                var orderId= new ValidateHelper().ValidateOrderIdAndGenerateNewOrderIdIfNeededAsync(request, merchantInfoResult, errorModel);
 
                 process = await _paymentService.ValidateInitAndBuildProcessObject(request, merchantInfoResult, errorModel, process);
 
-                if (!isValid)
+                if (!request.isValid)
                 {
                     errorModel.validationFailedMsg.Add(new ValidationFailedMsg() { Key = "", Message = "" });//On Hold
                 }
@@ -148,11 +147,11 @@ namespace Core.Gateway.Domain.Services
                 }
                 if (!string.IsNullOrWhiteSpace(request.CreditCardCryptogram))
                 {
-                    request.expireCryptogram =  CryptogramHelper.ForceExpireCryptogramAsync(_config.GetSection("CryptogramApi").Value, request.CreditCardCryptogram, request);
+                    request.expireCryptogram =  CryptogramHelper.ForceExpireCryptogramAsync(_config.GetSection("CryptogramApi").Value, request);
                 }
                 IndustryTypesEnum industryType = request.MerchantInfo.accountType.ParseEnum<IndustryTypesEnum>();
                 
-
+                
                 return process;
             }
             catch (Exception ex)

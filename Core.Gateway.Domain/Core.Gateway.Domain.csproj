@@ -18,8 +18,10 @@
 
   <ItemGroup>
     <Compile Remove="Helpers\CreditCardHelper.cs" />
+    <Compile Remove="Helpers\CryptogramHelper.cs" />
     <Compile Remove="Helpers\Query.cs" />
     <Compile Remove="Helpers\ValidationHelper.cs" />
+    <Compile Remove="Services\TransactionService.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,6 +33,10 @@
     <ProjectReference Include="..\Core.Gateway.Data\Core.Gateway.Data.csproj" />
     <ProjectReference Include="..\Core.Gateway.Helper\Core.Gateway.Helper.csproj" />
     <ProjectReference Include="..\Core.Payment.Tokenizer\Core.Payment.Tokenizer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Helpers\" />
   </ItemGroup>
 
 </Project>

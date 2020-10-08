@@ -9,7 +9,7 @@ namespace Core.Gateway.Models
     public class Request
     {
         public MerchantInfo MerchantInfo { get; set; }
-     
+        public bool isValid { get; set; }
         public string OrderId { get; set; }
         public bool? OrderIdIsUnique { get; set; }
         public bool? AutoGenerateorderId { get; set; }
@@ -73,6 +73,7 @@ namespace Core.Gateway.Models
 
     public class MerchantInfo
     {
+        public long MerchantId { get; set; }
         public string accountType { get; set; }
         public string TransactionType { get; set; }
         public string MerchantKey { get; set; }

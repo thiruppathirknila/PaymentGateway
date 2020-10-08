@@ -8,6 +8,10 @@ namespace Core.Gateway.Api.Helper
 {
     public class ValidateHelper
     {
+        public ValidateHelper()
+        {
+
+        }
         public async Task<string> ValidateOrderIdAndGenerateNewOrderIdIfNeededAsync(Request request, MerchantInfoResult merchantInfoResult, ErrorModel errorModel)
         {
             var validationFailedMsgList = new List<ValidationFailedMsg>();

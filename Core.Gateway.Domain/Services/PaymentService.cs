@@ -16,7 +16,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Core.Gateway.Domain.Interfaces;
 using System.Collections;
-
 namespace Core.Gateway.Services
 {
     public class PaymentService : IPaymentService
@@ -179,15 +178,8 @@ namespace Core.Gateway.Services
             try
             {
 
-                ValidateExtensions.ValidateIpAddress(merchantInfoResult.IpAddress, errorModel);
-
-                if (merchantInfoResult.AccountType == IndustryTypesEnum.ach.ToString())
-                {
-                    errorModel.errors.Add(string.Format("Invalid Account Type For Transaction ('{0}')", merchantInfoResult.AccountType));
-                    return null;
-                }
-
-                //var orderId = new ProcessHelper().ValidateOrderIdAndGenerateNewOrderIdIfNeededAsync(request, merchantInfoResult, errorModel, _processHelper);
+              
+                //var orderId =await new ValidateHelper().ValidateOrderIdAndGenerateNewOrderIdIfNeededAsync(request, merchantInfoResult, errorModel, _processHelper);
 
                 return process;
             }

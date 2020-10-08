@@ -1,21 +1,18 @@
 ﻿using Core.Gateway.Models;
-using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.IO;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Core.Gateway.Helper
 {
    public class CryptogramHelper
     {
 
-       
-        public static bool ForceExpireCryptogramAsync(string getAPIName,string cryptogram, Request request)
+        
+        public static bool ForceExpireCryptogramAsync(string getAPIName, Request request)
         {
             bool expiredSuccessfully = false;
             string requestString = string.Empty;
@@ -24,7 +21,7 @@ namespace Core.Gateway.Helper
             try
             {
                 string url = $"{getAPIName}Expire";
-                if (string.IsNullOrWhiteSpace(cryptogram)) return expiredSuccessfully;     // No cryptogram = not going to expire anything
+                if (string.IsNullOrWhiteSpace(request.CreditCardCryptogram)) return expiredSuccessfully;     // No cryptogram = not going to expire anything
                 try
                 {
                     using (var wb = new WebClient())
@@ -32,12 +29,12 @@ namespace Core.Gateway.Helper
                         wb.Headers.Add("Content-Type", "application/json");
                         var expireData = new Dictionary<string, string>
                         {
-                            { "cryptogram", cryptogram }
+                            { "cryptogram", request.CreditCardCryptogram }
                         };
                         // Merchant information is not strictly necessary. It can be provided so that we have better tracking of what got sent by whom.
                         if (request.MerchantInfo != null)
                         {
-                            //expireData["transcenterId"] = request.MerchantInfo.merchantId.ToString();
+                            expireData["transcenterId"] = request.MerchantInfo.MerchantId.ToString();
                             expireData["processorId"] = request.MerchantInfo.ProcessorId.ToString();
                         }
                         requestString = JsonConvert.SerializeObject(expireData);

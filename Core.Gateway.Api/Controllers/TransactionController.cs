@@ -1,18 +1,15 @@
 ﻿using System;
-using System.Data;
 using System.Threading.Tasks;
-using Core.Gateway.Data.Queries;
-using Core.Gateway.Domain.Services;
 using Core.Gateway.Helper;
 using Core.Gateway.Models;
-using Dapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using Core.Gateway.Domain.Interfaces;
 using Core.Gateway.Interfaces;
+using Core.Gateway.Services;
 
-namespace Payment.API.APILayer
+namespace Payment.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
